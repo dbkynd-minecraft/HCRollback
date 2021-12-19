@@ -6,7 +6,7 @@
 
     <groupId>com.dbkynd</groupId>
     <artifactId>HCRollback</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <packaging>jar</packaging>
 
     <name>HCRollback</name>
@@ -54,7 +54,7 @@
 
     <repositories>
         <repository>
-            <id>papermc-repo</id>
+            <id>papermc</id>
             <url>https://papermc.io/repo/repository/maven-public/</url>
         </repository>
         <repository>
@@ -69,15 +69,15 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.destroystokyo.paper</groupId>
+            <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
-            <version>1.16.5-R0.1-SNAPSHOT</version>
+            <version>1.18.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>net.coreprotect</groupId>
             <artifactId>coreprotect</artifactId>
-            <version>19.5</version>
+            <version>20.3</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>

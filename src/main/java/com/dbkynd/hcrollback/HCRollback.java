@@ -2,6 +2,7 @@ package com.dbkynd.hcrollback;
 
 import net.coreprotect.CoreProtectAPI;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class HCRollback extends JavaPlugin {
@@ -19,5 +20,9 @@ public final class HCRollback extends JavaPlugin {
     @Override
     public void onDisable() {
 
+    }
+
+    public static void broadcast(String message) {
+        Bukkit.getServer().broadcastMessage(ChatColor.YELLOW + "[HC Rollback] " + ChatColor.RESET + message);
     }
 }

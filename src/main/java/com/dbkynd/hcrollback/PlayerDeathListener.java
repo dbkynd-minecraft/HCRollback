@@ -44,8 +44,7 @@ public class PlayerDeathListener implements Listener {
         new BukkitRunnable() {
             @Override
             public void run() {
-                String startMessage = ChatColor.YELLOW + "[HC Rollback] " + ChatColor.RESET + name + "'s progress is rolling back...";
-                Bukkit.getServer().broadcastMessage(startMessage);
+                HCRollback.broadcast(name + ChatColor.RED + " died!" + ChatColor.RESET + " Rolling back progress...");
                 Instant instant = Instant.now();
                 long startTime = instant.getEpochSecond();
                 List<String[]> rollback = api.performRollback(rollBackTime, Collections.singletonList(name), null, null, null, null, 0, null);
@@ -59,9 +58,9 @@ public class PlayerDeathListener implements Listener {
                 instant = Instant.now();
                 long endTime = instant.getEpochSecond();
                 int duration = (int) (endTime - startTime);
-                String endMessage = ChatColor.YELLOW + "[HC Rollback] " + ChatColor.RESET + name + "'s rollback is complete.";
-                endMessage += "\nRestored " + ChatColor.GREEN + blocks + ChatColor.RESET + " blocks in " + duration + " seconds.";
-                Bukkit.getServer().broadcastMessage(endMessage);
+
+                HCRollback.broadcast("Reverted " + ChatColor.GREEN + blocks + ChatColor.RESET + " block actions in " + duration + " seconds.");
+                HCRollback.broadcast(name + "'s rollback is complete.");
                 userDataHandler.saveRollbackTime(player.getUniqueId(), (int) currentTime);
             }
         }.runTaskAsynchronously(plugin);

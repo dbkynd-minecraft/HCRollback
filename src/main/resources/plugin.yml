@@ -1,7 +1,7 @@
 name: HCRollback
 version: ${project.version}
 main: com.dbkynd.hcrollback.HCRollback
-api-version: 1.16
+api-version: 1.18
 author: DBKynd
 depend:
   - CoreProtect
